@@ -32,7 +32,7 @@ def konvolusi_parallel(image, kernel):
 
 # --- MAIN PROGRAM ---
 # Membaca gambar
-Image = cv2.imread('DSC_0018.JPG')
+Image = cv2.imread('image-24MP.JPG')
 if Image is None:
     print("Gambar tidak ditemukan.")
     exit()
