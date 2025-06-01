@@ -47,7 +47,7 @@ if __name__ == '__main__':
                                [1, 1, 1]], dtype=np.float32)
 
     # Baca gambar dan ubah ke grayscale
-    Image = cv2.imread('image-24MP.JPG')
+    Image = cv2.imread('image-3MP.JPG')
     if Image is None:
         print("Gambar tidak ditemukan.")
         exit()

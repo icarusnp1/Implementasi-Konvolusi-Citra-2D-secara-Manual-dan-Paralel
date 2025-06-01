@@ -10,7 +10,7 @@ kernel = (1/9) * np.array(
                             [1, 1, 1]])
 
 # Membaca gambar dan konversi ke grayscale
-Image = cv2.imread('DSC_0018.JPG')
+Image = cv2.imread('image-24MP.JPG')
 if Image is None:
     print("Gambar tidak ditemukan. Pastikan path gambar benar.")
 else:
