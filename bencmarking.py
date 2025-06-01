@@ -121,6 +121,13 @@ if __name__ == "__main__":
     img5 = read_image('image-24MP.jpg')
 
     list_img = [img1, img2, img3, img4, img5]
+    
+    # Padding agar bisa konvolusi di tepi
+    pad_h, pad_w = kernel.shape[0] // 2, kernel.shape[1] // 2
+    Image_pad1 = np.pad(img1, ((pad_h, pad_h), (pad_w, pad_w)), mode='constant', constant_values=0)
+    
+    # Warm up Numba JIT before timing
+    parallel_loop(Image_pad1, kernel)  # Call once, ignore result
 
     megapixels = [3, 9, 15, 21, 24]
     vanilla_times = []
@@ -164,6 +171,8 @@ if __name__ == "__main__":
         elapsed = time.time() - start_time
         multiprocess_times.append(elapsed)
         print(f"Multiprocess method took {elapsed:.4f} seconds")
+        
+        
         
     # Plotting
     plt.figure(figsize=(10, 6))
